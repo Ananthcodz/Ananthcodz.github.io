@@ -3,7 +3,18 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Navbar from "../components/navbar";
-
+import {
+  SiReact,
+  SiAngular,
+  SiJest,
+  SiPostman,
+  SiJira,
+  SiHtml5,
+  SiSpringboot,
+  SiJavascript,
+  SiRedux,
+  SiGithub,
+} from "react-icons/si";
 export default function Work() {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -17,13 +28,24 @@ export default function Work() {
       image1: "/assets/ttl_image.jpg",
       description: [
         "Engineered responsive, scalable web interfaces using React.js, Redux, and modular component design, improving UI performance and maintainability.",
-        "Integrated RESTful APIs with robust error handling, caching strategies, and end-to-end data flow consistency across microfrontend modules.",
+        "Integrated RESTful APIs with robust error handling, caching strategies, and end-to-end data flow consistency across various modules.",
         "Designed adaptive layouts supporting multiple screen resolutions ensuring a seamless UX across devices.",
         "Implemented unit and integration tests using Jest, increasing component reliability and reducing regression issues.",
       ],
-      tech: ["React.js", "Redux", "RESTful APIs", "Jest", "Responsive Design"],
-      linkedin: "https://linkedin.com",
+      tech: [
+        { name: "React.js", icon: SiReact },
+        { name: "JavaScript", icon: SiJavascript },
+        { name: "Redux", icon: SiRedux },
+        { name: "Jest", icon: SiJest },
+        { name: "Postman", icon: SiPostman },
+        { name: "Git", icon: SiGithub },
+        { name: "Responsive Design", icon: SiHtml5 },
+        { name: "Agile Methodology", icon: SiJira },
+      ],
+      linkedin:
+        "https://www.linkedin.com/posts/ananthakrishnancancode_engineeringabetterworld-tatatechnologies-activity-7365611285159342080-oUJr?utm_source=share&utm_medium=member_desktop&rcm=ACoAADmURokB-5XEQW-AqDNgBzHGfNcsPcq_1Wc",
       current: true,
+      short: "TTL",
     },
     {
       company: "Onward Technologies Limited",
@@ -38,9 +60,16 @@ export default function Work() {
         "Gained hands-on experience with AngularJS, improving UI responsiveness and integrating dynamic components for better user interaction.",
         "Strengthened understanding of component-based architecture, responsive design, and performance optimization.",
       ],
-      tech: ["Spring Boot", "AngularJS", "REST API", "Postman"],
+      tech: [
+        { name: "Spring Boot", icon: SiSpringboot },
+        { name: "AngularJS", icon: SiAngular },
+        { name: "RESTful APIs", icon: SiJavascript },
+        { name: "Postman", icon: SiPostman },
+        { name: "Agile Methodology", icon: SiJira },
+      ],
       certificate: true,
       current: false,
+      short: "OTL",
     },
   ];
 
@@ -79,7 +108,7 @@ export default function Work() {
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`relative px-6 py-3 font-mono font-bold transition-all duration-300 overflow-hidden group ${
+              className={`relative px-6 py-3 font-mono font-bold transition-all duration-300 overflow-hidden group cursor-pointer ${
                 activeTab === index
                   ? "text-black"
                   : "text-gray-400 hover:text-cyan-400"
@@ -89,7 +118,7 @@ export default function Work() {
                 {work.current && (
                   <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                 )}
-                {work.company.split(" ")[0]}
+                {work.short}
                 <span className="text-xs">
                   [{String(index + 1).padStart(2, "0")}]
                 </span>
@@ -240,18 +269,22 @@ export default function Work() {
                 <span className="text-pink-500">{"/>"}</span>
               </h3>
               <div className="flex flex-wrap gap-3">
-                {work.tech.map((tech, i) => (
-                  <div
-                    key={i}
-                    className="group relative px-4 py-2 bg-black border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 overflow-hidden"
-                  >
-                    <span className="relative z-10 text-gray-300 group-hover:text-cyan-400 font-mono text-sm transition-colors duration-300">
-                      {tech}
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute inset-0 shadow-[0_0_15px_rgba(34,211,238,0)] group-hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all duration-300"></div>
-                  </div>
-                ))}
+                {work.tech.map((tech, i) => {
+                  const IconComponent = tech.icon;
+                  return (
+                    <div
+                      key={i}
+                      className="group relative px-4 py-2 bg-black border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 overflow-hidden"
+                    >
+                      <span className="relative z-10 flex items-center gap-2 text-gray-300 group-hover:text-cyan-400 font-mono text-sm transition-colors duration-300">
+                        <IconComponent className="w-4 h-4" />
+                        {tech.name}
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 shadow-[0_0_15px_rgba(34,211,238,0)] group-hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all duration-300"></div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -263,6 +296,12 @@ export default function Work() {
         <span className="text-pink-500 font-mono text-sm tracking-widest animate-pulse">
           &lt;/work_experience&gt;
         </span>
+        <p className="text-gray-500 font-mono text-sm">
+          <span className="text-cyan-400">{"</"}</span>
+          Designed & Built by Ananth
+          <span className="text-pink-500">{" />"}</span>
+        </p>
+        <p className="text-gray-700 text-xs mt-2">© 2026 All rights reserved</p>
       </div>
 
       <style jsx>{`
