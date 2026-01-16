@@ -13,9 +13,9 @@ import {
 } from "react-icons/si";
 
 export default function Home() {
-  const [text, setText] = useState("Hello, I'm Anantha Krishnan 👋");
+  const [text, setText] = useState("Hello, I'm Anantha Krishnan!");
   const [showCursor, setShowCursor] = useState(true);
-  const fullText = "Hello, I'm Anantha Krishnan 👋";
+  const fullText = "Hello, I'm Anantha Krishnan!";
 
   const bio = {
     name: "Anantha Krishnan N R",
@@ -177,14 +177,15 @@ export default function Home() {
               &lt;/code&gt;
             </span>
           </div>
+
+           <div className="mt-16 flex justify-center animate-bounce">
+    <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex items-start justify-center p-2">
+      <div className="w-1 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
+    </div>
+  </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-50 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
-          </div>
-        </div>
+        
       </section>
 
       {/* About Section */}
