@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next build",
+    "build": "next build && cp out/index.html out/404.html && touch out/.nojekyll",
     "deploy": "gh-pages -d out -b gh-pages",
     "start": "next start",
     "lint": "eslint"

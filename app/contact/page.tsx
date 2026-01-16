@@ -1,25 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../components/navbar";
 import { SiGithub, SiLinkedin, SiGmail, SiDiscord } from "react-icons/si";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  type Particle = {
+    left: string;
+    top: string;
+    animationDelay: string;
+    animationDuration: string;
+  };
 
-  const [particles] = useState(() =>
-    [...Array(15)].map(() => ({
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      animationDelay: `${Math.random() * 5}s`,
-      animationDuration: `${5 + Math.random() * 10}s`,
-    }))
-  );
   const socialLinks = [
     {
       name: "GitHub",
@@ -68,6 +60,15 @@ export default function Contact() {
       icon: "✨",
     },
   ];
+
+  const [particles] = useState<Particle[]>(() =>
+    Array.from({ length: 15 }).map(() => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      animationDelay: `${Math.random() * 5}s`,
+      animationDuration: `${5 + Math.random() * 10}s`,
+    }))
+  );
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">

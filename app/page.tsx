@@ -13,7 +13,7 @@ import {
 } from "react-icons/si";
 
 export default function Home() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState("Hello, I'm Anantha Krishnan 👋");
   const [showCursor, setShowCursor] = useState(true);
   const fullText = "Hello, I'm Anantha Krishnan 👋";
 
@@ -25,6 +25,13 @@ export default function Home() {
     location: "Pune, India",
     philosophy:
       "Code is poetry written in logic. Every line should serve a purpose,\nevery function should tell a story.",
+  };
+
+  type Particle = {
+    left: string;
+    top: string;
+    animationDelay: string;
+    animationDuration: string;
   };
 
   const socials = [
@@ -71,6 +78,15 @@ export default function Home() {
     };
   }, []);
 
+  const [particles] = useState<Particle[]>(() =>
+    Array.from({ length: 15 }).map(() => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      animationDelay: `${Math.random() * 5}s`,
+      animationDuration: `${5 + Math.random() * 10}s`,
+    }))
+  );
+
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
@@ -85,15 +101,15 @@ export default function Home() {
 
         {/* Floating particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(20)].map((_, i) => (
+          {particles.map((particle, i) => (
             <div
               key={i}
               className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-float"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${5 + Math.random() * 10}s`,
+                left: particle.left,
+                top: particle.top,
+                animationDelay: particle.animationDelay,
+                animationDuration: particle.animationDuration,
               }}
             ></div>
           ))}
