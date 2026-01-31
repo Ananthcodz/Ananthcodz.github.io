@@ -406,7 +406,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex justify-center gap-6">
+          <div className="flex flex-col md:flex-row justify-center gap-6">
             {socials.map(({ label, link, icon }) => (
               <a
                 key={label}
