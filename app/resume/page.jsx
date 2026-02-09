@@ -111,7 +111,7 @@ export default function Resume() {
                         </>
                       ) : (
                         <>
-                          📥 DOWNLOAD RESUME
+                          DOWNLOAD RESUME
                           <span className="group-hover:translate-x-1 transition-transform duration-300">
                             →
                           </span>
@@ -130,7 +130,7 @@ export default function Resume() {
                     className="group relative w-full inline-flex items-center justify-center gap-3 px-8 py-4 mt-4 bg-transparent border-2 border-pink-500 text-pink-400 font-mono font-bold overflow-hidden transition-all duration-300 hover:text-black"
                   >
                     <span className="relative z-10 flex items-center gap-3">
-                      👁️ VIEW IN BROWSER
+                      VIEW IN BROWSER
                       <span className="group-hover:translate-x-1 transition-transform duration-300">
                         →
                       </span>

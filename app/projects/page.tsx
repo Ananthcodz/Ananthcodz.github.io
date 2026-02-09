@@ -20,6 +20,9 @@ import {
   SiGraphql,
   SiFlutter,
   SiEthereum,
+  SiGooglescholar,
+  SiLinkedin,
+  SiGithub,
 } from "react-icons/si";
 
 export default function Projects() {
@@ -398,7 +401,7 @@ export default function Projects() {
                           className="group w-full inline-flex items-center justify-center gap-3 px-6 py-3 bg-transparent border-2 border-cyan-500 text-cyan-400 font-mono font-bold overflow-hidden transition-all duration-300 hover:text-black relative"
                         >
                           <span className="relative z-10 flex items-center gap-2">
-                            ⚡ VIEW ON GITHUB
+                            <SiGithub></SiGithub> VIEW ON GITHUB
                             <span className="group-hover:translate-x-1 transition-transform duration-300">
                               →
                             </span>
@@ -416,7 +419,7 @@ export default function Projects() {
                           className="group w-full inline-flex items-center justify-center gap-3 px-6 py-3 bg-transparent border-2 border-pink-500 text-pink-400 font-mono font-bold overflow-hidden transition-all duration-300 hover:text-black relative"
                         >
                           <span className="relative z-10 flex items-center gap-2">
-                            💼 VIEW ON LINKEDIN
+                            <SiLinkedin></SiLinkedin> VIEW ON LINKEDIN
                             <span className="group-hover:translate-x-1 transition-transform duration-300">
                               →
                             </span>
@@ -450,7 +453,7 @@ export default function Projects() {
                           className="group w-full inline-flex items-center justify-center gap-3 px-6 py-3 bg-transparent border-2 border-yellow-500 text-yellow-400 font-mono font-bold overflow-hidden transition-all duration-300 hover:text-black relative"
                         >
                           <span className="relative z-10 flex items-center gap-2">
-                            📚 VIEW ON GOOGLE SCHOLAR
+                            <SiGooglescholar></SiGooglescholar> VIEW ON GOOGLE SCHOLAR
                             <span className="group-hover:translate-x-1 transition-transform duration-300">
                               →
                             </span>
